@@ -1,0 +1,17 @@
+name: Test Run
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.7]
+
+    steps:
+    - name: Test run
+      run: |
+        python test.py
